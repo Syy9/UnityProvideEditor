@@ -7,3 +7,6 @@ Overridable UnityProvide CustomEditor
 3. Override EditorType property
 
 see Sample_RectTransformEditor.cs
+
+## License
+MIT
