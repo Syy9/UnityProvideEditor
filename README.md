@@ -1,0 +1,2 @@
+# UnityProvideEditor
+Overridable UnityProvide CustomEditor
