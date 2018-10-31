@@ -28,6 +28,11 @@ namespace CustomEditorUtil
             var assembly = Assembly.GetAssembly(typeof(Editor));
             var editorTypeName = EditorType.ToString();
             var provideEditorType = assembly.GetTypes().Where(type => type.Name == editorTypeName).FirstOrDefault();
+            if(provideEditorType == null)
+            {
+                throw new Exception($"Can not find EditorType. type={editorTypeName}");
+            }
+
             var provideCustomEditorType = GetCustomEditorType(provideEditorType);
             var customEditorType = GetCustomEditorType(this.GetType());
             if (provideCustomEditorType == null || customEditorType == null || provideCustomEditorType != customEditorType)
