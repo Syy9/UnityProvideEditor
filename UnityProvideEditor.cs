@@ -26,7 +26,7 @@ namespace CustomEditorUtil
         protected virtual void OnEnable()
         {
             var assembly = Assembly.GetAssembly(typeof(Editor));
-            string editorTypeName = EditorType.ToString();
+            var editorTypeName = EditorType.ToString();
             var provideEditorType = assembly.GetTypes().Where(type => type.Name == editorTypeName).FirstOrDefault();
             var provideCustomEditorType = GetCustomEditorType(provideEditorType);
             var customEditorType = GetCustomEditorType(this.GetType());
