@@ -6,12 +6,12 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace CustomEditorUtil
+namespace Syy.Utility
 {
     /// <summary>
     /// Overridable UnityProvide CustomEditor
     /// #Usage 
-    /// 1. Define CustomEditor Attribute
+    /// 1. Create C# file. And set CustomEditor Attribute
     /// 2. Extends this class 
     /// 3. Override EditorType property
     /// </summary>
@@ -28,7 +28,7 @@ namespace CustomEditorUtil
             var assembly = Assembly.GetAssembly(typeof(Editor));
             var editorTypeName = EditorType.ToString();
             var provideEditorType = assembly.GetTypes().Where(type => type.Name == editorTypeName).FirstOrDefault();
-            if(provideEditorType == null)
+            if (provideEditorType == null)
             {
                 throw new Exception($"Can not find EditorType. type={editorTypeName}");
             }
@@ -190,7 +190,7 @@ namespace CustomEditorUtil
         DistanceJoint2DEditor,
         DoubleCurvePresetLibraryEditor,
         EdgeCollider2DEditor,
-        EditorSettingsInspect,or,
+        EditorSettingsInspect, or,
         Effector2DEditor,
         FogEditor,
         FontInspector,
